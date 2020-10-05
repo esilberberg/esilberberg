@@ -11,7 +11,7 @@ body {
 }
 
 a {
-    color: var(--dark);  
+    color: var(--dark);
 }
 a:hover {
     color: var(--primary);  
@@ -136,7 +136,8 @@ img.creativeCommons {
 /*-----ABOUT*/
 
 .bio-container {
-    margin-top: 50px;
+    margin: 50px auto;
+    max-width: 800px;
     display: grid;
     grid-template-columns: 30% 70%;
     grid-gap: 1em;
@@ -157,12 +158,12 @@ img.creativeCommons {
 
 .proj-description {
     margin: 50px auto;
+    max-width: 800px;
     padding: 30px;
     text-align: justify;
     border-bottom: 2px solid var(--primary);
     border-top: 2px solid var(--primary);
     font-size: 16px;
-    text-align: justify;
 }
 .proj-description h2 {
     text-align: center;
@@ -190,9 +191,7 @@ img.creativeCommons {
     font-size:12px;
     text-transform: uppercase;
   }
-.videos-container a {
-    text-decoration: none;
-}
+
 .photos-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -229,6 +228,12 @@ img.creativeCommons {
     }
     .bio-container {
         grid-template-columns: 1fr;
+    }
+    .biography {
+            text-align: left;
+    }
+    .proj-description {
+        text-align: left;
     }
     .videos-container {
         grid-template-columns: 1fr;
