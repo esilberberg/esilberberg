@@ -1,2 +1,2 @@
 # ericsilberberg
-This is for a personal resume website
+This is for a personal website: ericsilberberg.com
