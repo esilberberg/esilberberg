@@ -1,0 +1,94 @@
+.wrapper {
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+}
+.left {
+    float: left;
+    height: 500px;
+    display: block;
+    margin-right: 30px;
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+        text-align: center;
+        margin-top: 50px;
+    }
+    .left {
+        float: none;
+        height: 0;
+    }
+    .namespace {
+        margin-top: 120px;
+    }
+    .namespace h1 {
+        font-size: 50px 
+    }
+    
+}
+
+.namespace {
+    margin-bottom: 80px;
+}
+
+.linkspace {
+    display: inline-block;
+    font-family: Open sans, sans-serif;
+    font-size: 18px;
+}
+
+.ls-row {
+    margin-bottom: 40px;
+}
+
+.ls-item {
+    float: left;
+    margin-right: 20px;
+}
+
+h1 {
+    font-family: Lora, Oswald, serif;
+    font-size: 80px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+h2 {
+    font-family: Lora, Oswald, serif;
+    font-size: 30px;
+}
+h3 {
+    margin-top: 0;
+    padding: 0;
+    font-family: Open sans, sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+p {
+    font-family: Open sans, sans-serif;
+    font-size: 14px;
+}
+
+a {
+   color: black;
+}
+
+a:hover {
+    color: aquamarine;
+}
+
+.passport {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.wlink {
+    width: 30px;
+}
+
+.project-image img {
+    margin-top: 50px;
+    max-width: 100%;
+}
