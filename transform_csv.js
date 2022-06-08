@@ -1,3 +1,5 @@
+// Reads Google Sheets and then formats data for display under 'projects' tab in main section.
+
 const urlPublications = "https://docs.google.com/spreadsheets/d/1-uvRMT8881ia2G3HVkMLVbj1m_uEDKey0de0DAJQtxA/export?format=csv";
 const urlPresentations = "https://docs.google.com/spreadsheets/d/1cB74Dhj8jr4qjh5r51jKeeQQl4pQFdCBfiPys7rQTnw/export?format=csv";
 const urlOrganization = "https://docs.google.com/spreadsheets/d/1HeYd8UPnwLvBn04EUSKWkaOrTYeAE_wmraatWRrCceY/export?format=csv";
