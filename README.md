@@ -1,2 +1,2 @@
 # Personal Website 
-<a href="ericsilberberg.com">www.ericsilberberg.com</a>
+[<a href="[ericsilberberg.com](https://ericsilberberg.com/)">www.ericsilberberg.com</a>](https://ericsilberberg.com/)
