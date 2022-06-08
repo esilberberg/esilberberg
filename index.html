@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-61ELSCXK9R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-61ELSCXK9R');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="es-style.css">
+    
+    <script src="navigation.js"></script>
+    <script src="https://cdn.rawgit.com/Keyang/node-csvtojson/d41f44aa/browser/csvtojson.min.js"></script>
+    
+    <title>Eric Silberberg</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <img src="media\es-bw.JPG" alt="Portrait of Eric Silberberg">
+            </div>
+            <div class="header-center">
+                <h2>Eric Silberberg</h2>
+                <p>Assistant Professor</p>
+                <p>Librarian for Education<br>& Instructional Design</p>
+                <br>
+                <p>Benjamin S. Rosenthal Library</p>
+                <p>Queens College</p>
+                <p>City University of New York</p>
+                <p>eric.silberberg@qc.cuny.edu</p>
+            </div>
+            <div class="header-right">
+                <ul>
+                    <li>
+                        <a href="media\Eric-Silberberg-CV.pdf" target=”_blank” rel=”noopener noreferrer”>
+                            <img src="media\cv-square.svg" alt="CV" class="icon" onmouseover="this.src='media\\cv-square-highlight.svg'" onmouseout="this.src='media\\cv-square.svg'">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/esilberberg" target=”_blank” rel=”noopener noreferrer”>
+                            <img src="media\github-square.svg" alt="GitHub" class="icon" onmouseover="this.src='media\\github-square-highlight.svg'" onmouseout="this.src='media\\github-square.svg'">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/user/satellitesarespinnin/videos" target=”_blank” rel=”noopener noreferrer”>
+                        <img src="media\youtube-square.svg" alt="YouTube" class="icon" onmouseover="this.src='media\\youtube-square-highlight.svg'" onmouseout="this.src='media\\youtube-square.svg'">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <nav>
+            <div class="tab">
+                <button class="tablinks" onclick="openSubject(event, 'About')">About</button>
+                <button class="tablinks" onclick="openSubject(event, 'Projects')">Projects</button>
+                <button class="tablinks" onclick="openSubject(event, 'Research')">Research</button>
+            </div>
+        </nav>
+        <main>
+<!-- ABOUT ---------- ABOUT ---------- ABOUT ---------- ABOUT ---------- ABOUT ----------  -->
+            <div id="About" class="tabcontent">
+                <h1>About</h1>
+                <p>I am Assistant Professor, Librarian for Instructional Design and Education at Queens College, City University of New York (CUNY). As an educator, I have had the privilege to work with students from the Bronx, Brooklyn, Palestine, and Puebla. I previously held appointments at the Division of Libraries, New York University and the Communication and Political Science Departments at the Benemérita Universidad Autónoma de Puebla. I began my career as a science, technology, and special education teacher at the School for Innovation, MS442.</p>
+                <br>
+                <p>My research focuses on transnational education, history of special education in the United States, Mexican regional music, and, most recently, geospatial methods for bibliographic representation.</p>
+                <br>
+                <p>I was a Scholarly Communication Fellow at CUNY and have received the Seminar for the Acquisition of Latin American Library Materials Conference Attendance Scholarship, Chancellor Felix V. Matos Rodríguez Scholarship (CUNY), Benemérita Universidad Autónoma de Puebla Vice-Rectory of Research and Postgraduate Studies Diploma in Biocultural Research Methods, AmeriCorps New Teacher Grant as part of the New York City Teaching Fellows, and International Brotherhood of Electrical Workers Union Plus Scholarship.</p>
+                <br>
+                <p>I hold a MLS from CUNY Queens College, a MSEd from CUNY Brooklyn College, and a BA from Bard College.</p>
+                
+            </div>
+
+<!-- PROJECTS ---------- PROJECTS ---------- PROJECTS ---------- PROJECTS ---------- -->
+            <div id="Projects" class="tabcontent">
+                <h1>Projects</h1>
+                <h2 class="project"><a href="https://toporadio.org/" target=”_blank” rel=”noopener noreferrer”>TopoRadio</a></h2>
+                    <p>Born out of a collaboration with the Radio Preservation Task Force, 
+                        this interactive map  showcases books, articles, and archives about 
+                        Spanish-langauge radio in the United States.</p>
+                <h2 class="project"><a href="simposio.html">Symposium on Cultural Economy</a></h2>
+                    <p>A two-day conference I organized at the Benemérita Universidad Autónoma 
+                        de Puebla that explored the influence of Norteño music on the identity 
+                        and economy of the Tehuacán region of Puebla, Mexico.</p>
+                <h2 class="project"><a href="https://youtube.com/playlist?list=PLT6hAp7anwbrcPUK3UJRJN3jbLA2wHJ7K" target=”_blank” rel=”noopener noreferrer”>Cantares Tehuacán</a></h2>
+                    <p>Created for 4TV Puebla, these shorts profile musicians from Tehuacán, Puebla, 
+                        Mexico and the impact of COVID-19 pandemic on their art and livelihood.</p>
+                <h2 class="project"><a href="https://youtube.com/playlist?list=PLoX3ZYNFShfp5-glr7lq0OLN-QiIu9TBU" target=”_blank” rel=”noopener noreferrer”>Adelphi Brothers</a></h2>
+                    <p>Longtime family recording project.</p>
+                <h2 class="project"><a href="https://youtube.com/playlist?list=PLT6hAp7anwbrufrQowvdAASIO74gy4jy1" target=”_blank” rel=”noopener noreferrer”>La Ciudad de las Granadas</a></h2>
+                    <p>Recording project with Luis Ramon Castañeda of his compositions about Tehuacán, Mexico.</p>
+                <h2 class="project">Recordings: Foreign and Domestic</h2>
+                    <p>My field recordings captured across the United States and Mexico: <a href="https://youtube.com/playlist?list=PLT6hAp7anwbpsDagklIe4ClITLywbshfH" target=”_blank” rel=”noopener noreferrer”>vol. 1</a>&nbsp; 
+                        <a href="https://youtube.com/playlist?list=PLT6hAp7anwbpJinZOHYVOaX5laNCMB8Xo" target=”_blank” rel=”noopener noreferrer”>vol. 2</a>&nbsp;
+                        <a href="https://youtube.com/playlist?list=PLT6hAp7anwbodu_eGWsj9OOlObEd315ir" target=”_blank” rel=”noopener noreferrer”>vol. 3</a></p>
+            </div>
+
+<!-- RESEARCH ---------- RESEARCH ---------- RESEARCH ---------- RESEARCH ---------- -->
+            <div id="Research" class="tabcontent">
+                <h1>Research</h1>
+                <h3>Publications</h3>
+                <div id="publications"></div>
+        
+                <h3>Presentations</h3>
+                <div id="presentations"></div>
+        
+                <h3>Conference Organization</h3>
+                <div id="organization"></div>
+            </div>
+        </main>
+        <footer>
+            ©2022 Eric Silberberg, shared under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0 license</a>.
+        </footer>
+    </div>
+
+</body>
+<script src="transform_csv.js"></script>
+</html>
