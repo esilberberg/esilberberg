@@ -1,2 +1,2 @@
 # Personal Website 
-<a href="ericsilberberg.com" target=”_blank” rel=”noopener noreferrer”> ericsilberberg.com </a>
+<a href="ericsilberberg.com">www.ericsilberberg.com</a>
