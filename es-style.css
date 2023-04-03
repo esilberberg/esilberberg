@@ -71,6 +71,10 @@ img.nav-arrow {
   margin-right: 50px;
 }
 
+.header-right i {
+  font-size: 2rem;
+}
+
 ul {
   margin-top: -9px;
   list-style-type: none;
@@ -78,7 +82,7 @@ ul {
 
 li {
   margin-bottom: 20px;
-  text-align: right;
+  text-align: center;
 }
 
 a {
@@ -99,6 +103,16 @@ footer {
   margin: 50px auto;
   padding: 10px 0;
 }
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48;
+  vertical-align: bottom;
+}
+
 
 
 /* Navigation --------- Navigation --------- Navigation --------- */

@@ -13,7 +13,7 @@ fetch(urlPublications).then(result=>result.text()).then(function(csvtext) {
 }).then(function(csv) {
     csv.forEach(function(row) {
         // row. should be followed by exact name of column label in sheet
-        pubs.innerHTML += '<h4>' + row.Title + '</h4>';
+        pubs.innerHTML += '<h4><a target="_blank" href="' + row.URL + '">' + row.Title + ' <i class="fa-solid fa-file-pdf"></i></a></h4>'; 
         pubs.innerHTML += '<p class="research-item">' + row.Journal + ' (' + row.Year + ') ' + '</p>';
     });
 });
