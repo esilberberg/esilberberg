@@ -1,14 +1,20 @@
-// Controls navigation tab elements in main section
-function openSubject(evt, subject) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active-hamburger");
+    navMenu.classList.toggle("active-hamburger");
+    if (navMenu.classList.contains("active-hamburger")) {
+        document.body.style.overflowY = "hidden";
+    } else {
+        document.body.style.overflowY = "auto";
     }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(subject).style.display = "block";
-    evt.currentTarget.className += " active";
-  }
+});
+
+document.querySelectorAll(".navlink").forEach((n) =>
+    n.addEventListener("click", () => {
+        hamburger.classList.remove("active-hamburger");
+        navMenu.classList.remove("active-hamburger");
+        document.body.style.overflowY = "auto";
+    })
+);

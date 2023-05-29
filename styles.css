@@ -1,0 +1,268 @@
+:root {
+   --background:  #F7F7F7;
+   --dark: #011376;
+   --light: #64BFF6;
+   --slate: #758493;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    background-color: var(--background);
+}
+
+html {
+    scroll-padding-top: 4rem;
+}
+
+.navlink {
+    text-decoration: none;
+    color: var(--slate);
+}
+
+.navlink:hover {
+    color: var(--light);
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 1rem 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 40px;
+    justify-content: center; 
+    background-color: white;
+}
+
+.nav-menu a {
+    background-color: white;
+}
+
+li {
+    list-style: none;
+}
+
+.wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    padding: 7rem 0 5rem 0;
+    color: var(--dark);
+}
+
+.me {
+    width: 150px;
+    border-radius: 150px;
+}
+
+.name {
+    text-align: left;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-left: -2px;
+    padding: 0;
+}
+
+header p {
+    font-size: 1rem;
+}
+
+.social {
+    padding-top: 20px;
+}
+
+.social ul {
+    display: flex;
+    gap: 30px;
+}
+
+.social a {
+    color: var(--slate);
+    font-size: 24px;
+}
+
+.social a:hover {
+    color: var(--light);
+}
+
+footer {
+    text-align: center;
+    color: var(--slate);
+    font-size: 12px;
+    padding-bottom: 1rem;
+}
+
+h2 {
+    border-bottom: 1px solid black;
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+}
+
+main a {
+    color: var(--dark);
+}
+
+main a:hover {
+    color: var(--light);
+}
+
+section {
+    padding-bottom: 5rem;
+}
+
+#about p {
+    line-height: 1.5rem;
+    padding-bottom: 1rem;
+}
+
+#research h3 {
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+#research h4 {
+    font-size: 1rem;
+    font-weight: normal;
+    padding-bottom: 0.3rem;
+}
+
+.research-item {
+    padding-bottom: 2rem;
+}
+
+.research-description {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+
+#publications, #presentations {
+    margin-bottom: 2rem;
+}
+
+.project {
+    margin-bottom: 1.5rem;
+}
+
+#projects h3 {
+    font-size: 1rem;
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    background-color: white;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: var(--dark);
+}
+
+@media(max-width:580px){
+    header {
+        display: block;
+        padding: 7rem 0 5rem 0;
+        text-align: center;
+        color: var(--dark);
+    }
+    header h1 {
+        text-align: center;
+        font-size: 2rem;
+        margin-left: 0;
+        padding: 1rem 0;
+    }
+    header .social ul {
+        justify-content: center;
+        gap: 60px;
+    }
+    .hamburger{
+        display: block;
+        cursor: pointer;
+        background-color: transparent;
+    }
+    .hamburger.active-hamburger .bar:nth-child(2){
+        opacity: 0;
+      }
+     .hamburger.active-hamburger .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+      }
+     .hamburger.active-hamburger .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    .nav-menu{
+        position: fixed;
+        top: -200%;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--slate);
+        width: 100%;
+        text-align: center;
+        transition: top 0.3s ease;
+        padding: 20px 0 100vh 0;
+    }
+
+    .nav-menu li {
+        background-color: var(--slate);
+        margin: 1.5rem 0;
+    }
+
+    .nav-menu a {
+        color: var(--background);
+        background-color: var(--slate);
+    }
+    
+    .nav-menu.active-hamburger{
+        top: 60px;
+    }
+    .hamburger.active-hamburger {
+        background-color: transparent;
+    }
+}
+
+.simposio i {
+    font-size: 30px;
+    color: var(--light);
+    padding-top: 2rem;
+}
+
+.simposio i:hover {
+    color: var(--slate);
+}
+
+.simposio h1 {
+    font-size: 2rem;
+    padding: 2rem 0;
+    color: var(--dark);
+}
+.simposio p {
+    padding-bottom: 1rem;
+}
+
+.simposio img {
+    width: 300px;
+}
+
+.simposio-poster {
+    text-align: center;
+    padding: 2rem 0 4rem 0;
+}
