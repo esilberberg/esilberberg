@@ -131,22 +131,16 @@ section {
     padding-bottom: 1rem;
 }
 
-#research h3 {
-    padding-bottom: 1rem;
-    text-align: center;
-}
-
-#research h4 {
+h3 {
     font-size: 1rem;
     font-weight: normal;
-    padding-bottom: 0.3rem;
 }
 
-.research-item {
+.publication-item {
     padding-bottom: 2rem;
 }
 
-.research-description {
+.publication-description {
     font-size: 0.8rem;
     font-style: italic;
 }
@@ -157,10 +151,6 @@ section {
 
 .project {
     margin-bottom: 1.5rem;
-}
-
-#projects h3 {
-    font-size: 1rem;
 }
 
 .hamburger{
