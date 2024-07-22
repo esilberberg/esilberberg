@@ -1,0 +1,63 @@
+:root {
+    --background:  #F7F7F7;
+    --dark: #011376;
+    --light: #64BFF6;
+    --slate: #758493;
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+    background-color: var(--background);
+}
+
+.title {
+    text-align: center;
+    color: var(--dark);
+}
+.header-title {
+    font-size: 1.5rem;
+}
+.header-sub-title {
+    font-size: 1.2rem;
+}
+main {
+    max-width: 1000px;
+    margin: 3rem auto 0 auto;
+    padding: 0 0.5rem;
+}
+.lesson-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 5rem;
+}
+h2 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+.accordion {
+    border: 1px solid var(--dark);
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s;
+}
+  
+.active, .accordion:hover {
+    background-color: var(--light);
+    color: white;
+}
+  
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
