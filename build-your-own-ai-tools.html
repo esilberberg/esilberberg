@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="lesson-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
 
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
+    
     <script src="https://kit.fontawesome.com/1d9765704f.js" crossorigin="anonymous"></script>
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -17,50 +19,49 @@
 </head>
 <body>
     <nav></nav>
-    <header class="title">
-        <h1 class="header-title">Build Your Own AI Tools:</h1>
-        <h1 class="header-sub-title">A Hands-on Guide with Gemini LLM</h1>
-    </header>
     <main>
-        <section class="lesson-section">
-            <h2>Part I: Define the Problem</h2>
-            <button class="accordion">A. Welcome</button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <button class="accordion">B. Defining the problem</button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <button class="accordion">C. About Gemini 1.5 Flash LLM </button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+        <section class="title">
+            <h1 class="header-title">Build Your Own AI Tools:</h1>
+            <h1 class="header-sub-title">A Hands-on Guide with Gemini LLM</h1>
+            <p>Last Updated: 23 Jul, 2024</p>
         </section>
-        <section class="lesson-section">
-            <h2>Part II: Gemini and Prompt Engineering</h2>
-            <button class="accordion">A. Getting started</button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <button class="accordion">B. Installing Gemini 1.5 Flash </button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <button class="accordion">C. Config Gemini</button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+        <section class="welcome">
+            <p>We've all used AI-powered chatbots: simple input, relevant output. But what if you could be the creator, not just the consumer?</p> 
+            <p>In this tutorial you'll learn how to build your own AI tools using Google's Gemini LLM. You'll learn to handle repetitive tasks by manipulating data with Python functions and leveraging the power of the Gemini API. By the end, you'll be equipped to tackle bigger, more complex projects.</p>
+            <p>To make the most of this tutorial, its recommended that you have a basic understanding of Python. If not, take some time with this tutorial and come back when you understand objects and functions.</p>
         </section>
-        <section class="lesson-section">
-            <h2>Part III: Iterate over the Data</h2>
-            <button class="accordion">Installing pandas</button>
-            <div class="panel">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
+        <nav class="contents">
+            <h2 class="contents-title">Table of Contents</h2>
+            <ul class="contents-list">
+                <li>1. Defining the problem</li>
+                <li>2. Installing Gemini 1.5 Flash</li>
+                <li>3. Your first function with Gemini</li>
+                <li>4. Rating student reviews with Gemini</li>
+                <li>5. Iterating over a large dataset</li>
+                <li>6. Where to go from here</li>
+            </ul>
+        </nav>
+        <section class="lesson-content">
+            <h3>1. Defining the problem</h3>
+            <p>Analyzing student feedback can be difficult, especially with large classes and diverse responses: direct, cagey, passive aggressive, ambiguous, etc. If we want to get a snapshot of student’s opinions about a class, one way would be to rate their response based on sentiment. In other words, we could rate the overall positivity or negativity of each student's experience. Manually categorizing feedback by sentiment is time consuming. In this tutorial, we'll use Gemini to rate the positivity of student feedback on a scale of 1-5 and create a structured dataset. This will allow us to quickly identify trends and focus on specific areas for improvement. </p>
         </section>
+        <section class="lesson-content">
+            <h3>2. Installing Gemini 1.5 Flash</h3>
+            <p>Gemini 1.5 Flash is Google’s free, lightweight LLM that can handle 10,000+ words in a prompt. To get started we'll need to register for a <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener noreferrer">Gemini API key</a> and install the <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank" rel="noopener noreferrer">Gemini Python library.</a> </p>
+            <p>Follow the directions on this site to generate your API key. Once generated, copy the key and save it in a new file on your computer called: <code class="file-name">gemini-api-key.txt</code> Do not share this key with anyone.</p>
+            <p>Then pip install the Gemini Python library:</p>
+            <pre><code class="language-python">pip install google-generativeai</code></pre>
+        </section>
+        <section class="lesson-content">
+            <h3>3. Your first function with Gemini</h3>
+        </section>
+        <pre><code class="language-javascript">
+var acc = document.getElementsByClassName("accordion");
+        var i;
+        </code></pre>
+        
     </main>
-
-<script src="scripts/lesson-accordion.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script>hljs.highlightAll()</script>
 </body>
 </html>
