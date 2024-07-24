@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="lesson-styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/nord.min.css">
 
     <link rel="icon" type="image/x-icon" href="media/favicon.ico">
     
@@ -15,30 +15,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
-    <title>Build Your Own AI Tools: A Hands-on Guide with Gemini LLM</title>
+    <title>Build Your Own AI Tools: An Introduction to Gemini's API</title>
 </head>
 <body>
-    <nav></nav>
+    <nav class="top-nav">
+        <div class="top-nav-content">
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i></a>
+        </div>
+    </nav>
     <main>
-        <section class="title">
-            <h1 class="header-title">Build Your Own AI Tools:</h1>
-            <h1 class="header-sub-title">A Hands-on Guide with Gemini LLM</h1>
+        <header>
+            <h1 class="title">Build Your Own AI Tools:</h1>
+            <h1 class="sub-title">An Introduction to Gemini's API</h1>
             <p>Last Updated: 23 Jul, 2024</p>
-        </section>
+        </header>
         <section class="welcome">
-            <p>We've all used AI-powered chatbots: simple input, relevant output. But what if you could be the creator, not just the consumer?</p> 
+            <p>We've all used AI-powered chatbots: simple input, relevant output. But what if you could be the AI creator, not just the consumer?</p> 
             <p>In this tutorial you'll learn how to build your own AI tools using Google's Gemini LLM. You'll learn to handle repetitive tasks by manipulating data with Python functions and leveraging the power of the Gemini API. By the end, you'll be equipped to tackle bigger, more complex projects.</p>
             <p>To make the most of this tutorial, its recommended that you have a basic understanding of Python. If not, take some time with this tutorial and come back when you understand objects and functions.</p>
         </section>
-        <nav class="contents">
-            <h2 class="contents-title">Table of Contents</h2>
-            <ul class="contents-list">
-                <li>1. Defining the problem</li>
-                <li>2. Installing Gemini 1.5 Flash</li>
-                <li>3. Your first function with Gemini</li>
-                <li>4. Rating student reviews with Gemini</li>
-                <li>5. Iterating over a large dataset</li>
-                <li>6. Where to go from here</li>
+        <nav class="table-of-contents">
+            <h2>Table of Contents</h2>
+            <ul>
+                <li><a href="">1. Defining the problem</a></li>
+                <li><a href="">2. Installing Gemini 1.5 Flash</a></li>
+                <li><a href="">3. Your first function with Gemini</a></li>
+                <li><a href="">4. Rating student reviews with Gemini</a></li>
+                <li><a href="">5. Iterating over a large dataset</a></li>
+                <li><a href="">6. Where to go from here</a></li>
             </ul>
         </nav>
         <section class="lesson-content">
@@ -47,20 +51,55 @@
         </section>
         <section class="lesson-content">
             <h3>2. Installing Gemini 1.5 Flash</h3>
-            <p>Gemini 1.5 Flash is Google’s free, lightweight LLM that can handle 10,000+ words in a prompt. To get started we'll need to register for a <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener noreferrer">Gemini API key</a> and install the <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank" rel="noopener noreferrer">Gemini Python library.</a> </p>
-            <p>Follow the directions on this site to generate your API key. Once generated, copy the key and save it in a new file on your computer called: <code class="file-name">gemini-api-key.txt</code> Do not share this key with anyone.</p>
-            <p>Then pip install the Gemini Python library:</p>
+            <p>Gemini 1.5 Flash is Google’s free, lightweight LLM that can handle 10,000+ words in a prompt. To get started we'll need to register for a Gemini API key and install the Google's Generative AI Python library.</p>
+            <ol>
+                <li><p>Follow the <a href="https://ai.google.dev/gemini-api/docs/api-key" target="_blank" rel="noopener noreferrer">directions to generate your API key.</a> Once generated, copy and save the key in a new file on your computer called: <code class="file-name">gemini-api-key.txt</code> Do not share this key.</p></li>
+                <li><p>Then pip install <a href="https://ai.google.dev/gemini-api/docs/downloads" target="_blank" rel="noopener noreferrer">Google's Generative AI Python library:</a></p></li>
+            </ol> 
             <pre><code class="language-python">pip install google-generativeai</code></pre>
         </section>
         <section class="lesson-content">
             <h3>3. Your first function with Gemini</h3>
+            <p>Now we’re ready to take Gemini for a test drive so let's get our files organized. Create a new folder called <code class="file-name">my-ai-tool</code> and put the <code class="file-name">gemini-api-key.txt</code> file inside the folder. Create a new Python file in the folder and call it <code class="file-name">ai-tool.py</code> Your file structure should look like this:</p>
+            <pre>
+                &mdash;&mdash; my-ai-tool
+                            &mdash; gemini-api-key.txt
+                            &mdash; ai-tool.py
+            </pre>
+            <p>Inside the IDE of your choice, open <code class="file-name">ai-tool.py</code> and read your API key into memory. By printing the contents of <code class="file-name">gemini-api-key.txt</code> to the terminal, you can test that everything is in order:</p>
+
+<pre><code class="language-python">with open('gemini-api-key.txt') as f:
+        genai_api_key = f.read()
+
+print(genai_api_key)
+</code></pre>
+            <p>Next, remove the print function, import Google's Generative AI library, and configure the language model. In just two short lines of code, you'll establish a connection to the Gemini API and create an object called "model" that can generate text with the gemini-1.5-flash LLM:</p>
+<pre><code class="language-python">import google.generativeai as genai
+
+with open('gemini-api-key.txt') as f:
+        genai_api_key = f.read()
+
+genai.configure(api_key=genai_api_key)
+model = genai.GenerativeModel('gemini-1.5-flash')
+</code></pre>
+            <p>With Gemini configured, let's create a function that'll create anagrams using Gemini. We’ll start with a simple function called <code class="file-name">create_anagram(name)</code> that takes a person's name as input. Inside the function, we'll use <code class="file-name">model.generate_content()</code> to send a prompt to Gemini, asking it to generate an anagram based on the given name. I’m using a formatted string so that way we can pass our function’s <code class="file-name">name</code> argument at the end of the prompt: Create one anagram with the letters in this person’s name: {name}.</p>
+            <p>To retrieve the generated anagram as text, we'll use <code class="file-name">response.text</code>. If we omit the <code class="file-name">.text</code> attribute, the function will return metadata about the generated text.</p>
+            <p>Let's try running the function with and without <code class="file-name">.text</code> to see the difference. What anagrams can we create for Albert Einstein?</p>
+<pre><code class="language-python">def create_anagram(name):
+        response = model.generate_content(f"Create one anagram with the letters in this person's name: {name}")
+        return response.text
+
+print(create_anagram("albert einstein"))
+</code></pre>
+
         </section>
-        <pre><code class="language-javascript">
-var acc = document.getElementsByClassName("accordion");
-        var i;
-        </code></pre>
-        
+        <section class="lesson-content">
+            <h3>4. Rating student reviews with Gemini</h3>
+        </section>
+
+        <p class="acknowledgement">This lesson was made possible by the <a href="https://www.cuny.edu/academics/faculty-affairs/cuny-innovative-teaching-academy/building-bridges-of-knowledge-bbk/" target="_blank" rel="noopener noreferrer">Building Bridges of Knowledge</a> project of the CUNY Office of Faculty Affairs.</p>
     </main>
+    <footer>©2020-2024 Eric Silberberg</footer>  
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>hljs.highlightAll()</script>
 </body>

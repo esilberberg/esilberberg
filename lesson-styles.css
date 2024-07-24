@@ -5,11 +5,9 @@
     --light: #64BFF6;
     --slate: #758493;
  }
-
 * {
     margin: 0;
     padding: 0;
-    font-family: "Lato", sans-serif;
 }
 a{
     color: var(--dark);
@@ -18,20 +16,59 @@ a{
 a:hover {
     color: var(--light);
 }
-main {
-    max-width: 900px;
+main, .top-nav-content  {
+    max-width: 760px;
     margin: 0 auto;
     padding: 0 0.5rem;
+    font-family: "Lato", sans-serif;
+}
+.acknowledgement {
+    font-style: italic;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 2rem;
+ }
+.top-nav {
+    background-color: var(--warm-gray);
+    margin-bottom: 4rem;
+}
+.top-nav a {
+    color: white;
+}
+.top-nav i {
+    font-size: 1.5rem;
+    padding: 0.7rem;
+    background-color: var(--dark);
+    transition: 0.1s ease-in;
+}
+.top-nav i:hover {
+    background-color: var(--light);
+}
+
+header {
+    color: var(--dark);
+    margin-bottom: 2rem;
 }
 .title {
-    text-align: left;
-    color: var(--dark);
+    font-size: 4rem;
 }
-.header-title {
-    font-size: 1.5rem;
+.sub-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
 }
-.header-sub-title {
-    font-size: 1.2rem;
+
+header p {
+    font-style: italic;
+}
+
+.welcome p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 1rem;  
+}
+
+pre{
+    margin-bottom: 3rem;
 }
 
 .file-name {
@@ -39,4 +76,54 @@ main {
     background-color: var(--warm-gray);
     padding: 2px;
     border-radius: 3px;
+    font-size: 14px;
+}
+
+.table-of-contents {
+    border-left: 10px solid var(--light);
+    border-right: 10px solid var(--light);
+    border-radius: 10px;
+    margin: 4rem 10%;
+    padding: 1rem 1.3rem;
+}
+.table-of-contents h2{
+    text-align: center;
+    color: var(--dark);
+    font-size: 1.5rem;
+}
+
+.table-of-contents ul {
+    list-style: none;
+}
+
+.table-of-contents li {
+    margin: 20px 0;
+    font-size: 17px;
+}
+
+.lesson-content {
+    margin-top: 4rem;
+}
+.lesson-content h3 {
+    border-left: 25px solid var(--light);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+.lesson-content p {
+    font-size: 17px;
+    line-height: 1.85;
+    margin-bottom: 1.5rem;
+}
+.lesson-content ol {
+    padding-left: 3rem;
+}
+
+footer {
+    font-family: Helvetica, sans-serif;
+    text-align: center;
+    background-color: var(--warm-gray);
+    font-size: 12px;
+    padding: 1rem 0;
 }
