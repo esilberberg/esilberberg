@@ -15,6 +15,7 @@
      overflow: hidden;
      background-color: white;
      position: fixed;
+     height: 35px;
      top: 0;
      width: 100%;
      display: flex;
@@ -23,12 +24,11 @@
      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
  }
  .hamburger {
-     display: block;
+     display: none;
      cursor: pointer;
-     padding: 10px 0 10px 30px;
+     padding-left: 30px;
      background-color: white;
  }
- 
  .bar {
      display: block;
      width: 25px;
@@ -37,6 +37,33 @@
      transition: all 0.3s ease;
      background-color: var(--dark);
  }
+.horizontal-menu {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+    gap: 40px;
+    background-color: white;
+}
+.horizontal-menu a {
+    color: var(--slate);
+    text-decoration: none;
+    transition: 0.2s;
+    background-color: white;
+}
+
+.horizontal-menu a:hover {
+    color: var(--light);
+}
+
+@media(max-width:700px){
+    .horizontal-menu {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
  .title {
      color: white;
      font-size: 24px;
