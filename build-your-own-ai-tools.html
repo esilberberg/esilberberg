@@ -60,7 +60,8 @@
         </section>
         <section class="lesson-content" id="3">
             <h3>3. Your first function with Gemini</h3>
-            <p>Now we’re ready to take Gemini for a test drive so let's get our files organized. Create a new folder called <code class="file-name">my-ai-tool</code> and put the <code class="file-name">gemini-api-key.txt</code> file inside the folder. Create a new Python file in the folder and call it <code class="file-name">ai-tool.py</code> Your file structure should look like this:</p>
+            <p>With everything installed, we’re ready to take Gemini for a test drive. Our first project will be an AI tool that creates an <a href="https://en.wikipedia.org/wiki/Anagram" target="_blank" rel="noopener noreferrer">anagram</a> of a person's name.</p>
+            <p>Let's get our files organized. Create a new folder called <code class="file-name">my-ai-tool</code> and put the <code class="file-name">gemini-api-key.txt</code> file inside the folder. Create a new Python file in the folder and call it <code class="file-name">ai-tool.py</code> Your file structure should look like this:</p>
 <pre>
     &mdash;&mdash; my-ai-tool
             &mdash; gemini-api-key.txt
@@ -69,7 +70,7 @@
             <p>Inside the IDE of your choice, open <code class="file-name">anagram.py</code> and read your API key into memory. By printing the contents of <code class="file-name">gemini-api-key.txt</code> to the terminal, you can test that everything is in order:</p>
 
 <pre><code class="language-python">with open('gemini-api-key.txt') as f:
-        genai_api_key = f.read()
+    genai_api_key = f.read()
 
 print(genai_api_key)
 </code></pre>
@@ -77,17 +78,17 @@ print(genai_api_key)
 <pre><code class="language-python">import google.generativeai as genai
 
 with open('gemini-api-key.txt') as f:
-        genai_api_key = f.read()
+    genai_api_key = f.read()
 
 genai.configure(api_key=genai_api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 </code></pre>
-            <p>With Gemini configured, let's create a function that'll create anagrams using Gemini. We’ll start with a simple function called <code class="file-name">create_anagram(name)</code> that takes a person's name as input. Inside the function, we'll use <code class="file-name">model.generate_content()</code> to send a prompt to Gemini, asking it to generate an anagram based on the given name. I’m using a formatted string so that way we can pass our function’s <code class="file-name">name</code> argument at the end of the prompt: Create one anagram with the letters in this person’s name: {name}.</p>
+            <p>With Gemini configured, let's create a function that'll create anagrams using Gemini. We’ll start with a simple function called <code class="file-name">create_anagram(name)</code> that takes a person's name as input. Inside the function, we'll use <code class="file-name">model.generate_content()</code> to send a prompt to Gemini, asking it to generate an anagram based on the given name. I’m using a Python feature called an <a href="https://www.w3schools.com/python/python_string_formatting.asp" target="_blank" rel="noopener noreferrer">f-string (formatted string literals)</a> to add our function’s <code class="file-name">name</code> argument at the end of the prompt: Create one anagram with the letters in this person’s name: {name}.</p>
             <p>To retrieve the generated anagram as text, we'll use <code class="file-name">response.text</code>. If we omit the <code class="file-name">.text</code> attribute, the function will return metadata about the generated text.</p>
             <p>Let's try running the function with and without <code class="file-name">.text</code> to see the difference. What anagrams can we create for Albert Einstein?</p>
 <pre><code class="language-python">def create_anagram(name):
-        response = model.generate_content(f"Create one anagram with the letters in this person's name: {name}")
-        return response.text
+    response = model.generate_content(f"Create one anagram with the letters in this person's name: {name}")
+    return response.text
 
 print(create_anagram("albert einstein"))
 </code></pre>
@@ -95,25 +96,25 @@ print(create_anagram("albert einstein"))
         </section>
         <section class="lesson-content" id="4">
             <h3>4. Rating student reviews with Gemini</h3>
-            <p>At this point, we’ve essentially created a stripped-down version of Google’s Gemini chatbot. Let’s move on to using Gemini to analyze data.</p>
-            <p>In the <code class="file-name">my-ai-tool</code> folder, create a new Python file called <code class="file-name">student-reviews.py</code>. Then download <a href="content-build-your-own-ai-tools/student-review-1.txt" download="student-review-1.txt">student-review-1.txt <i class="fa-solid fa-arrow-up-right-from-square"></i></a> and add it to the folder. Your file structure should look like this:</p> 
+            <p>Now that we understand the basics of the Gemini API, let's build a new AI tool that analyzes student reviews for their sentiment.</p>
+            <p>In the <code class="file-name">my-ai-tool</code> folder, create a new Python file called <code class="file-name">rate-sentiment.py</code>. Then download <a href="content-build-your-own-ai-tools/student-review-1.txt" download="student-review-1.txt">student-review-1.txt <i class="fa-solid fa-arrow-up-right-from-square"></i></a> and add it to the folder. Your file structure should look like this:</p> 
 <pre>
     &mdash;&mdash; my-ai-tool
             &mdash; gemini-api-key.txt
             &mdash; anagram.py
             &mdash; student-review-1.txt
-            &mdash; student-reviews.py
+            &mdash; rate-sentiment.py
 </pre>
                 
                 
-                Read this student review into memory and print it to the terminal as we did earlier with your API key: </p>
+            <p>Read this student review into memory and print it to the terminal as we did earlier with your API key: </p>
 <pre><code class="language-python">with open('student-review-1.txt') as f:
     student_review = f.read()
 
 print(student_review)
 </code></pre>
-<p>When you run the above code, you should see this student review in the terminal:</p>
-<pre><code class="language-bash">Stats class was definitely challenging, but I learned 
+            <p>When you run the above code, you should see this student review in the terminal:</p>
+<pre><code class="language-plaintext">Stats class was definitely challenging, but I learned 
 a lot! The teacher was helpful, and class discussions 
 were interesting. However, I struggled with the
 assignments. The instructions were often confusing,
@@ -121,12 +122,80 @@ and I spent way too much time trying to figure out
 what was expected. I wish the assignments were more
 clear-cut.
 </code></pre>
-            <p>What we see in this student review </p>
+            <p>On an individual basis, student reviews are nuanced and provide some meaningful feedback. But multiply this out by 50 or 100 times, and it becomes harder to understand whether students, in general, found a course useful.</p>
+            <p>We can use Gemini to rate the sentiment of student reviews, which is to say quantify student reviews. A simple way to rate sentiment is with a Likert scale of 1-5, with 1 representing Very Negative and 5 representing Very Positive sentiment.</p>
+            <p>Getting Gemini to rate sentiment effectively will take us into an area called prompt engineering, which is the process of crafting instructions to guide AI models towards desired outputs. Prompt engineering is an iterative process, so by refining our instructions we'll discover best practices for this process.</p>
+            <p>Let's start by creating a function that will accept student feedback as a paragraph. This should look familiar from earlier:</p>
+<pre><code class="language-python">import google.generativeai as genai
 
+#Read Gemini API key into memory.
+with open('gemini-api-key.txt') as f:
+    genai_api_key = f.read()
+
+#Read student review into memory.
+with open('student-review-1.txt') as f:
+    student_review = f.read()
+
+#Configure API and select the Gemini 1.5 Flash language model.
+genai.configure(api_key=genai_api_key)
+model = genai.GenerativeModel('gemini-1.5-flash')
+
+def rate_sentiment(text):
+    """Rates the positivity of a text on scale of 1-5: 
+    5 = Very Positive. 1 = Very Negative.
+    """    
+    response = model.generate_content() 
+    return response.text
+
+#Apply the function to our text file and see Gemini's response.
+print(rate_sentiment(student_review))
+</code></pre>
+            <p>We can use this prompt: Rate the positivity of this student's review of a class on a scale of 1-5, with 1 representing Very Negative and 5 representing Very Positive. We can then use an <a href="https://www.w3schools.com/python/python_string_formatting.asp" target="_blank" rel="noopener noreferrer">f-string</a> again like this: </p>
+<pre><code class="language-python">def rate_sentiment(text):
+    """Rates the positivity of a text on scale of 1-5: 
+    5 = Very Positive. 1 = Very Negative.
+    """    
+    response = model.generate_content(f"Rate the positivity of this student's review of a class on a scale of 1-5, with 1 representing Very Negative and 5 representing Very Positive: {text}") 
+    return response.text
+
+print(rate_sentiment(student_review))
+</code></pre>
+            <p>Run the code and you should get a response similar to this in the terminal:</p>
+<pre><code class="language-plaintext">I would rate this review a **3/5**. 
+
+Here's why:
+
+* **Positive:** The student acknowledges learning a lot, appreciates the professor's helpfulness, and finds the class discussions engaging.
+* **Neutral:**  The student's experience with the assignments is mixed. While they struggle, the student doesn't express outright dissatisfaction with the professor or the class.
+* **Negative:**  The student explicitly expresses frustration with the assignment instructions and wishes they were clearer. 
+
+Overall, the review is balanced, highlighting both positive and negative aspects. It's not overly enthusiastic but also not overtly critical.
+</code></pre>
+            <p>The good news is that Gemini understands the prompt and is giving us a meaningful response. However, for our purposes, we just need the Likert score and not the full justification. This is prompt engineering, and what we learned from Gemini's justified response is that we need to refine our prompt to be more specific about what is our desired output. Let's try this:</p>
+<pre><code class="language-python">def rate_sentiment(text):
+    """Rates the positivity of a text on scale of 1-5: 
+    5 = Very Positive. 1 = Very Negative.
+    """    
+    response = model.generate_content(f"Rate the positivity of this student's review of a class on a scale of 1-5, with 1 representing Very Negative and 5 representing Very Positive. Your output should be in the form of a single digit representing your positivity score: {text}") 
+    return response.text
+
+print(rate_sentiment(student_review))
+</code></pre>
+            <p>Let's recap: We’ve successfully passed our data to Gemini, had it analyze that data for sentiment positivity, and refined the format of its output through prompt engineering. Next we’ll apply our <code class="file-name">rate_sentiment()</code> function to an entire set of student feedback. </p>
         </section>
-
-       
+        <section class="lesson-content" id="5">
+            <h3>5. Iterating over a large dataset</h3>
+        </section>
+        <section class="lesson-content" id="6">
+            <h3>6. Where to go from here</h3>
+        </section>
     </main>
+
+
+
+
+
+
     <footer>
         <p>This lesson was made possible by the CUNY Office of Faculty Affairs' 2024 <a href="https://www.cuny.edu/academics/faculty-affairs/cuny-innovative-teaching-academy/building-bridges-of-knowledge-bbk/" target="_blank" rel="noopener noreferrer">Building Bridges of Knowledge</a> project.</p>
         <p>Lesson content on this page is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International license</a></p>
