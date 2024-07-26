@@ -22,12 +22,7 @@ main, .top-nav-content  {
     padding: 0 0.5rem;
     font-family: "Lato", sans-serif;
 }
-.acknowledgement {
-    font-style: italic;
-    text-align: center;
-    font-size: 12px;
-    margin-bottom: 2rem;
- }
+
 .top-nav {
     background-color: var(--warm-gray);
     margin-bottom: 4rem;
@@ -125,5 +120,12 @@ footer {
     text-align: center;
     background-color: var(--warm-gray);
     font-size: 12px;
-    padding: 1rem 0;
+    padding: 2rem 0 1rem 0;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+footer i{
+    font-size: 25px;
 }

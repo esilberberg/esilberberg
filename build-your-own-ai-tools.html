@@ -27,7 +27,7 @@
         <header>
             <h1 class="title">Build Your Own AI Tools:</h1>
             <h1 class="sub-title">An Introduction to Gemini's API</h1>
-            <p>Last Updated: 23 Jul, 2024</p>
+            <p>By Eric Silberberg, 2024</p>
         </header>
         <section class="welcome">
             <p>We've all used AI-powered chatbots: simple input, relevant output. But what if you could be the AI creator, not just the consumer?</p> 
@@ -61,12 +61,12 @@
         <section class="lesson-content" id="3">
             <h3>3. Your first function with Gemini</h3>
             <p>Now we’re ready to take Gemini for a test drive so let's get our files organized. Create a new folder called <code class="file-name">my-ai-tool</code> and put the <code class="file-name">gemini-api-key.txt</code> file inside the folder. Create a new Python file in the folder and call it <code class="file-name">ai-tool.py</code> Your file structure should look like this:</p>
-            <pre>
-                &mdash;&mdash; my-ai-tool
-                            &mdash; gemini-api-key.txt
-                            &mdash; ai-tool.py
-            </pre>
-            <p>Inside the IDE of your choice, open <code class="file-name">ai-tool.py</code> and read your API key into memory. By printing the contents of <code class="file-name">gemini-api-key.txt</code> to the terminal, you can test that everything is in order:</p>
+<pre>
+    &mdash;&mdash; my-ai-tool
+            &mdash; gemini-api-key.txt
+            &mdash; anagram.py
+</pre>
+            <p>Inside the IDE of your choice, open <code class="file-name">anagram.py</code> and read your API key into memory. By printing the contents of <code class="file-name">gemini-api-key.txt</code> to the terminal, you can test that everything is in order:</p>
 
 <pre><code class="language-python">with open('gemini-api-key.txt') as f:
         genai_api_key = f.read()
@@ -95,11 +95,45 @@ print(create_anagram("albert einstein"))
         </section>
         <section class="lesson-content" id="4">
             <h3>4. Rating student reviews with Gemini</h3>
+            <p>At this point, we’ve essentially created a stripped-down version of Google’s Gemini chatbot. Let’s move on to using Gemini to analyze data.</p>
+            <p>In the <code class="file-name">my-ai-tool</code> folder, create a new Python file called <code class="file-name">student-reviews.py</code>. Then download <a href="content-build-your-own-ai-tools/student-review-1.txt" download="student-review-1.txt">student-review-1.txt <i class="fa-solid fa-arrow-up-right-from-square"></i></a> and add it to the folder. Your file structure should look like this:</p> 
+<pre>
+    &mdash;&mdash; my-ai-tool
+            &mdash; gemini-api-key.txt
+            &mdash; anagram.py
+            &mdash; student-review-1.txt
+            &mdash; student-reviews.py
+</pre>
+                
+                
+                Read this student review into memory and print it to the terminal as we did earlier with your API key: </p>
+<pre><code class="language-python">with open('student-review-1.txt') as f:
+    student_review = f.read()
+
+print(student_review)
+</code></pre>
+<p>When you run the above code, you should see this student review in the terminal:</p>
+<pre><code class="language-bash">Stats class was definitely challenging, but I learned 
+a lot! The teacher was helpful, and class discussions 
+were interesting. However, I struggled with the
+assignments. The instructions were often confusing,
+and I spent way too much time trying to figure out
+what was expected. I wish the assignments were more
+clear-cut.
+</code></pre>
+            <p>What we see in this student review </p>
+
         </section>
 
-        <p class="acknowledgement">This lesson was made possible by the <a href="https://www.cuny.edu/academics/faculty-affairs/cuny-innovative-teaching-academy/building-bridges-of-knowledge-bbk/" target="_blank" rel="noopener noreferrer">Building Bridges of Knowledge</a> project of the CUNY Office of Faculty Affairs.</p>
+       
     </main>
-    <footer>©2020-2024 Eric Silberberg</footer>  
+    <footer>
+        <p>This lesson was made possible by the CUNY Office of Faculty Affairs' 2024 <a href="https://www.cuny.edu/academics/faculty-affairs/cuny-innovative-teaching-academy/building-bridges-of-knowledge-bbk/" target="_blank" rel="noopener noreferrer">Building Bridges of Knowledge</a> project.</p>
+        <p>Lesson content on this page is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Attribution 4.0 International license</a></p>
+        <i class="fa-brands fa-creative-commons"></i> <i class="fa-brands fa-creative-commons-by"></i>
+    </footer>  
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 <script>hljs.highlightAll()</script>
 </body>
