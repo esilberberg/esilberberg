@@ -170,6 +170,11 @@
      padding: 0.5rem 0;
      margin-bottom: 2rem;
  }
+ h3.subheading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+ }
  main a {
      color: var(--dark);
      transition: 0.2s;
@@ -197,9 +202,11 @@
      margin-bottom: 1.3rem;
  }
  
- .publication-description {
-     font-size: 0.8rem;
+ .source {
      font-style: italic;
+ }
+ .awards {
+    color: darkred;
  }
  
  @media(max-width:580px){
